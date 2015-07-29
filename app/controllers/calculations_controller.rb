@@ -3,6 +3,11 @@ class CalculationsController < ApplicationController
     render("instructions.html.erb")
   end
   def loan_payment
+    @interest_rate=params["interest_rate"].to_f
+    @num_years=params["num_years"].to_i
+    @num_months=@num_years*12
+    @principal=params["principal"].to_f
+    @payment=(((@interest_rate/120000)*@principal)/(1-((1+(@interest_rate/120000))**-@num_months))).to_f
     render("loan_payment.html.erb")
   end
   def random

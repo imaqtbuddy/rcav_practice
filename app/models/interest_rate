@@ -1,0 +1,2 @@
+class Interest_Rate < ActiveRecord::Base
+end
