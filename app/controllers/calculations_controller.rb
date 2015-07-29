@@ -24,7 +24,18 @@ class CalculationsController < ApplicationController
   def square_root
     @number=params["number"]
     @number_sqrt=Math.sqrt(@number.to_i)
-     render("square_root.html.erb")
-  end
-
+#     @integer_test=@number.is_a? Integer
+#     b="square_root"
+#     if (@integer_test==true)
+#       {
+#         b="square_root"
+#      }
+#    else
+#     {
+#       b="error"
+#     }
+#   end
+# render(b+".html.erb")
+render("square_root.html.erb")
+end
 end
